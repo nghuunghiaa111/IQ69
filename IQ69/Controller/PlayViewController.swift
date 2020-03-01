@@ -55,24 +55,21 @@ class PlayViewController: UIViewController {
     }
     
     @objc func nextHandle() {
-        DataProvider.questionBus.checkAns(ans: ans)
-        ques = ques + 1
-        title = "Câu \(ques)"
-        aButton.backgroundColor = .red
-        bButton.backgroundColor = .red
-        cButton.backgroundColor = .red
-        dButton.backgroundColor = .red
-        if ques == 10 {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "End", style: .plain, target: self, action: #selector(endHandle))
-        }
-        DataProvider.questionBus.createData(questionPath: ques, question: questionLabel, ans1: aButton, ans2: bButton, ans3: cButton, ans4: dButton)
+        confirm()
     }
     
     @objc func endHandle() {
-        DataProvider.questionBus.checkAns(ans: ans)
-        let resultController = ResultViewController()
-        resultController.modalPresentationStyle = .fullScreen
-        self.present(resultController, animated: true)
+        let alert = UIAlertController(title: "Thông báo", message: "Bạn chắc chắn chứ?", preferredStyle: .alert)
+        let noBtn = UIAlertAction(title: "Không", style: .cancel, handler: nil)
+        let yesBtn = UIAlertAction(title: "Chắc chắn", style: .default) { (yesBtn) in
+            DataProvider.questionBus.checkAns(ans: self.ans)
+            let resultController = ResultViewController()
+            resultController.modalPresentationStyle = .fullScreen
+            self.present(resultController, animated: true)
+        }
+        alert.addAction(noBtn)
+        alert.addAction(yesBtn)
+        present(alert, animated: true)
     }
     
     @objc func aButtonHandle() {
@@ -147,11 +144,25 @@ class PlayViewController: UIViewController {
         }
     }
     
-//    @objc func yoloHandle() {
-//        introView.isHidden = true
-//        
-//        //DataProvider.questionBus.refreshScreen(question: questionLabel, ans1: aButton, ans2: bButton, ans3: cButton, ans4: dButton)
-//        DataProvider.questionBus.createData(questionPath: ques, question: questionLabel, ans1: aButton, ans2: bButton, ans3: cButton, ans4: dButton)
-//    }
-    
+    func confirm() {
+        let alert = UIAlertController(title: "Thông báo", message: "Bạn chắc chắn chứ?", preferredStyle: .alert)
+        let noBtn = UIAlertAction(title: "Không", style: .cancel, handler: nil)
+        let yesBtn = UIAlertAction(title: "Chắc chắn", style: .default) { (yesBtn) in
+            DataProvider.questionBus.checkAns(ans: self.ans)
+            self.ques = self.ques + 1
+            self.title = "Câu \(self.ques)"
+            self.aButton.backgroundColor = .red
+            self.bButton.backgroundColor = .red
+            self.cButton.backgroundColor = .red
+            self.dButton.backgroundColor = .red
+            if self.ques == 10 {
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "End", style: .plain, target: self, action: #selector(self.endHandle))
+            }
+            DataProvider.questionBus.createData(questionPath: self.ques, question: self.questionLabel, ans1: self.aButton, ans2: self.bButton, ans3: self.cButton, ans4: self.dButton)
+        }
+        alert.addAction(noBtn)
+        alert.addAction(yesBtn)
+        present(alert, animated: true)
+    }
+
 }

@@ -13,15 +13,7 @@ import Firebase
 public class QuestionBussiness {
     private var lstQuestion:[Question] = []
     private var answer = String()
-    private var points = 0
-    private var correctAns = 0
-    
-//    func fetchQuestion(question: String) -> [Question] {
-//        if lstQuestion.count == 0 {
-//            createData()
-//        }
-//        return lstQuestion
-//    }
+    public var correctAns = 0
     
     public func createData(questionPath: Int, question: UILabel, ans1: UIButton, ans2: UIButton, ans3: UIButton, ans4: UIButton) {
         var ref:DatabaseReference!
@@ -40,10 +32,8 @@ public class QuestionBussiness {
     
     public func checkAns(ans: String) {
         if ans == answer {
-            points = points + 10
             correctAns = correctAns + 1
         }
-        //return points
     }
     
     public func savePoints() {
@@ -53,7 +43,7 @@ public class QuestionBussiness {
         var ref: DatabaseReference!
         ref = Database.database().reference(fromURL: "https://iq69-e9bb0.firebaseio.com/")
         let userChild = ref.child("users").child(uid)
-        let text = String(points)
+        let text = String(correctAns*10)
         let value = ["point":text]
         userChild.updateChildValues(value as [AnyHashable : Any]) { (err, ref) in
             if err != nil {
@@ -64,7 +54,7 @@ public class QuestionBussiness {
     }
     
     public func totalPoint() -> Int {
-        return points
+        return correctAns * 10
     }
     
     public func totalCorrectAns() -> Int {

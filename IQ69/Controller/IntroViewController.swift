@@ -21,8 +21,7 @@ class IntroViewController: UIViewController {
         // Do any additional setup after loading the view.
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Exit", style: .plain, target: self, action: #selector(backHandle))
         setupButton()
-        
-        
+        DataProvider.questionBus.correctAns = 0
         //lstQuestion = DataProvider.questionBus.fetchQuestion()
     }
     

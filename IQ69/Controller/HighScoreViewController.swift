@@ -52,8 +52,17 @@ class HighScoreViewController: UIViewController, UITableViewDelegate, UITableVie
                 self.lstUser.append(user)
                 
             }
+            self.lstUser.sort {
+                self.stringToInt(point: $0.points ?? "0") > self.stringToInt(point: $1.points ?? "0")
+            }
             self.hsTableView.reloadData()
         }
+    }
+    
+    func stringToInt(point: String) -> Int {
+        var pointInt = 0
+        pointInt = Int(point) ?? 0
+        return pointInt
     }
     
     //tableView protocol
@@ -66,13 +75,8 @@ class HighScoreViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let user = lstUser[indexPath.row]
         cell.textLabel?.text = user.name
-        cell.detailTextLabel?.text = user.points! + " points"
+        cell.detailTextLabel?.text = (user.points ?? "0") + " points"
         return cell
     }
-    
-    func sortPoint() {
-        
-    }
-    
 
 }

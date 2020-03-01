@@ -26,39 +26,51 @@
                     <rect key="frame" x="40" y="461" width="295" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RpG-sY-JbZ">
                     <rect key="frame" x="40" y="499" width="295" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apr-v4-2rU">
                     <rect key="frame" x="40" y="537" width="295" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljp-Pc-8Zb">
+                    <rect key="frame" x="40" y="416" width="295" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzk-J6-Dya">
-                    <rect key="frame" x="40" y="249" width="295" height="158"/>
+                    <rect key="frame" x="40" y="172" width="295" height="206"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="295" id="U2J-Bz-OUJ"/>
-                        <constraint firstAttribute="height" constant="158" id="czD-q5-7bc"/>
+                        <constraint firstAttribute="height" constant="206" id="2s1-rc-Goa"/>
+                        <constraint firstAttribute="width" constant="295" id="nJm-Zw-Zmx"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljp-Pc-8Zb">
-                    <rect key="frame" x="40" y="416" width="295" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="bzk-J6-Dya" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="249" id="91x-cB-kKM"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bzk-J6-Dya" secondAttribute="bottom" constant="260" id="IDl-UV-O1A"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bzk-J6-Dya" secondAttribute="trailing" constant="40" id="dcZ-C8-sIr"/>
-                <constraint firstItem="bzk-J6-Dya" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="yua-gA-CfL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bzk-J6-Dya" secondAttribute="trailing" constant="40" id="2CV-Ih-XWu"/>
+                <constraint firstItem="bzk-J6-Dya" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="172" id="Doi-a6-2pC"/>
+                <constraint firstItem="bzk-J6-Dya" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="O5a-eX-zkw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bzk-J6-Dya" secondAttribute="bottom" constant="289" id="bM1-gg-34z"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>

@@ -28,9 +28,8 @@ public class UserBussiness {
                 let user = User()
                 user.setValuesForKeys(dict)
                 self.lstUser.append(user)
-                
-                
             }
         }
     }
+    
 }

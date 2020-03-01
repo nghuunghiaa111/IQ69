@@ -20,16 +20,12 @@ class HomeViewController: UIViewController {
 
         //updateQuestion()
         // Do any additional setup after loading the view.
-        title = "IQ69"
+        getUserName()
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(logoutButtonHandle))
         
         //setupView
         setupView()
         
-        //user is not logged in
-        if Auth.auth().currentUser?.uid == nil {
-            perform(#selector(logoutButtonHandle), with: nil, afterDelay: 0)
-        }
     }
     
     @objc func logoutButtonHandle() {
@@ -70,6 +66,24 @@ class HomeViewController: UIViewController {
         alert.addAction(btnOk)
         alert.addAction(btnNo)
         self.present(alert, animated: true)
+    }
+    
+    func getUserName() {
+        if Auth.auth().currentUser?.uid == nil {
+            perform(#selector(logoutButtonHandle), with: nil, afterDelay: 0)
+        } else {
+            guard let uid = Auth.auth().currentUser?.uid else {
+                return
+            }
+            var ref: DatabaseReference!
+            ref = Database.database().reference()
+            let userChild = ref.child("users").child(uid)
+            userChild.observe(.value) { (snapshot) in
+                if let dict = snapshot.value as? [String: Any] {
+                    self.title = dict["name"] as? String
+                }
+            }
+        }
     }
     
     func updateQuestion() {
